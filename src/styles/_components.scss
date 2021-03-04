@@ -33,7 +33,7 @@
     margin: 10px 20px 30px 20px;
     padding: 10px 10px 0 10px;
     @include flexCenter(column, none, none);
-    border-bottom: 22px solid $c-border;
+    border-bottom: 22px solid $c-cardBorder;
     text-align: center;
     transition: box-shadow 300ms ease-in-out;
     &:hover {
@@ -55,7 +55,7 @@
       top: 15%;
       left: 25%;
       z-index: 1;
-      background-color: $c-grayHighlight;
+      background-color: $c-grayBackLight;
       position: absolute;
     }
   }
@@ -88,12 +88,16 @@
   }
 
   #{&}__arrow {
-    transform: scale(1.2);
+    // transform: scale(1.2);
+    width: 40px;
     margin-bottom: 20px;
     transition: transform 300ms ease-in-out;
     cursor: pointer;
+    img {
+      width: 100%;
+    }
     &:hover {
-      transform: scale(1.4);
+      transform: scale(1.2);
     }
   }
 }
@@ -159,14 +163,14 @@
       top: 30px;
       position: absolute;
       width: 200px;
-      color: $c-redAdd;
+      color: $c-addText;
     }
     p {
       margin-top: 0;
     }
   }
   #{&}__plus {
-    width: 30px;
+    width: 40px;
     transition: transform 300ms ease-in-out;
     @include flexCenter(row, center, center);
     cursor: pointer;
@@ -181,7 +185,7 @@
   position: absolute;
   z-index: 3;
   padding: 20px;
-  background-color: $c-grayBorder;
+  background-color: $c-formBackground;
   @include flexCenter(column, none, none);
   width: 100%;
   @include respond(tab-port) {
