@@ -1,5 +1,6 @@
 import Icon from "./Icon";
 import Image from "./Image";
+// import Button from './Button';
 
 const HotSauceItem = ({ item, onDeleteSauce }) => {
     return (
@@ -7,6 +8,7 @@ const HotSauceItem = ({ item, onDeleteSauce }) => {
             <button onClick={() => onDeleteSauce(item.id)} className="grid-container__close">
                 <Icon srcKey="close" />
             </button>
+            {/* <Button  /> */}
             <div className="grid-container__product-stage">
                 <Image srcKey={item.img.src} alt={item.img.alt} classKey="grid-container__product-image" />
                 <div className="grid-container__product-stage--backlight"></div>
