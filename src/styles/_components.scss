@@ -98,22 +98,35 @@
 }
 
 .product-view {
-  @include flexCenter(row, none, none);
-  height: 76%;
+  @include flexCenter(column, none, none);
+  @include respond(desktop) {
+    height: 76%;
+    @include flexCenter(row, none, none);
+  }
   width: 100vw;
   padding-left: 30px;
   padding-right: 30px;
   #{&}__stage {
-    width: 70%;
+    width: 100%;
+    @include respond(desktop) {
+      width: 70%;
+    }
     @include flexCenter(column, none, none);
     img {
-      width: 40%;
+      width: 100%;
       align-self: center;
+      @include respond(desktop) {
+        width: 40%;
+        max-height: 100%;
+      }
     }
   }
   #{&}__description {
-    width: 30%;
     padding: 30px;
+    width: 100%;
+    @include respond(desktop) {
+      width: 30%;
+    }
     @include flexCenter(column, space-between, none);
     background-color: $c-stageBackground;
   }
