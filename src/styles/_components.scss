@@ -105,6 +105,20 @@
 .product-view {
   display: flex;
   height: 76%;
+  width: 100vw;
+  padding-left: 30px;
+  padding-right: 30px;
+  #{&}__stage {
+    width: 70%;
+    background-color: $c-stageBackground;
+  }
+  #{&}__description {
+    width: 30%;
+    padding: 30px;
+  }
+  #{&}__description, #{&}__stage {
+    padding: 30px;
+  }
 }
 
 .hot-sauce-footer {
