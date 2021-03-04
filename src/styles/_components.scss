@@ -1,5 +1,10 @@
 .hot-sauce-header {
   height: 75px;
+  display: flex;
+  align-items: center;
+  #{&}__image {
+    height: 100%;
+  }
 }
 
 .grid-container {
@@ -12,13 +17,16 @@
 
   #{&}__item {
     margin: 0 10px 0 10px;
-    // &--1{background-color: orangered}
-    // &--2{background-color: yellowgreen}
-    // &--3{background-color: blueviolet}
-    // &--4{background-color: palevioletred}
-    // &--5{background-color: royalblue}
-    // &--6{background-color: goldenrod}
-    // &--7{background-color: crimson}
-    // &--8{background-color: darkslategray}
+    display: flex;
+    flex-direction: column;
+  }
+
+  #{&}__product-image,
+  #{&}__arrow {
+    align-self: center;
+  }
+
+  #{&}__close {
+    align-self: flex-end;
   }
 }

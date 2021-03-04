@@ -11,7 +11,7 @@ import tapatio from "../assets/bottles/tapatio.png";
 import texasPete from "../assets/bottles/texas-pete.png";
 import Cholula from "../assets/bottles/cholula.png";
 
-const Image = ({ srcKey, alt }) => {
+const Image = ({ srcKey, alt, classKey }) => {
     const iconObj = {
         "redPepper": redPepper,
         "greenPepper": greenPepper,
@@ -27,7 +27,7 @@ const Image = ({ srcKey, alt }) => {
         "cholula": Cholula
     }
     return (
-        <img src={iconObj[srcKey]} alt={alt} />
+        <img src={iconObj[srcKey]} alt={alt} className={classKey} />
     )
 }
 
