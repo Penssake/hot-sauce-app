@@ -12,7 +12,7 @@
   display: grid;
   padding-left: 30px;
   padding-right: 30px;
-  grid-template-rows: repeat(2, minmax(150px, min-content));
+  grid-template-rows: repeat(2, minmax(428px, min-content));
   grid-template-columns: repeat(auto-fill, 250px);
   grid-template-columns: repeat(auto-fit, 250px);
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -26,11 +26,30 @@
     margin: 0 10px 0 10px;
     display: flex;
     flex-direction: column;
+    border-bottom: 22px solid $c-border;
+  }
+
+  #{&}__product-stage {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    height: 300px;
+    &--backlight {
+      width: 50%;
+      height: 50%;
+      top: 15%;
+      left: 25%;
+      z-index: 1;
+      background-color: $c-grayHighlight;
+      position: absolute;
+    }
   }
 
   #{&}__product-image,
   #{&}__arrow {
     align-self: center;
+    z-index: 2;
   }
 
   #{&}__close {
