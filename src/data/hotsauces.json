@@ -87,5 +87,13 @@
         "alt": "Franks red hot bottle"
       }
     }
-  ]
+  ],
+  "footer": {
+    "text": "Lorem Footer",
+    "number": "555-425-2424",
+    "icon": {
+      "src": "redPepper",
+      "alt": ""
+    }
+  }
 }

@@ -1,19 +1,28 @@
 import Icon from "./Icon";
 import Image from "./Image";
 
-const HotSauceItem = ({ item }) => {
+const HotSauceItem = ({ item, onDeleteSauce }) => {
     return (
         <li className="grid-container__item">
-            <Icon srcKey="close" classKey="grid-container__close" />
+            <button onClick={() => onDeleteSauce(item.id)} className="grid-container__close">
+                <Icon srcKey="close" />
+            </button>
             <div className="grid-container__product-stage">
                 <Image srcKey={item.img.src} alt={item.img.alt} classKey="grid-container__product-image" />
                 <div className="grid-container__product-stage--backlight"></div>
             </div>
-            <h2>{item.title}</h2>
-            <p>{item.subtitle}</p>
-            <Icon srcKey="arrow" classKey="grid-container__arrow" />
+            <div className="grid-container__content">
+                <h2>{item.title}</h2>
+                <p>{item.subtitle}</p>
+            </div>
+            <div className="grid-container__footer">
+                <Icon srcKey="arrow" classKey="grid-container__arrow" />
+            </div>
         </li >
     )
 }
 
 export default HotSauceItem;
+
+// TODO clean up component, make button component for clickable icons 
+// remove border from button that is clicked
