@@ -1,7 +1,6 @@
 import HotSauceItem from "./HotSauceItem";
 
 const HotSauceList = ({ hotSauces }) => {
-    console.log(hotSauces)
     return (
         <ul>
             {hotSauces.map(item => (
