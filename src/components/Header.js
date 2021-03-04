@@ -1,9 +1,9 @@
-import pepperRed from "../assets/icons/pepper-red.png"
+import Icon from "./Icon";
 
 const Header = ({ text, icon }) => {
     return (
         <header className="hot-sauce-header">
-            <img src={pepperRed} alt={icon.alt} />
+            <Icon src={icon.src} alt={icon.alt} />
             <h1>{text}</h1>
         </header>
     )
