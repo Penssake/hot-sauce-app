@@ -5,8 +5,7 @@
 
 .hot-sauce-header {
   height: 10%;
-  display: flex;
-  align-items: center;
+  @include flexCenter(row, none, center);
   padding-left: 20px;
   color: $c-headerFontColor;
   #{&}__image {
@@ -32,8 +31,7 @@
   #{&}__item {
     margin: 10px 20px 30px 20px;
     padding: 10px 10px 0 10px;
-    display: flex;
-    flex-direction: column;
+    @include flexCenter(column, none, none);
     border-bottom: 22px solid $c-border;
     text-align: center;
     transition: box-shadow 300ms ease-in-out;
@@ -46,8 +44,7 @@
   }
 
   #{&}__product-stage {
-    display: flex;
-    flex-direction: column;
+    @include flexCenter(column, none, none);
     position: relative;
     width: 100%;
     height: 250px;
@@ -71,9 +68,7 @@
 
   #{&}__footer {
     height: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    @include flexCenter(column, center, none);
   }
 
   #{&}__product-image,
@@ -103,21 +98,24 @@
 }
 
 .product-view {
-  display: flex;
+  @include flexCenter(row, none, none);
   height: 76%;
   width: 100vw;
   padding-left: 30px;
   padding-right: 30px;
   #{&}__stage {
     width: 70%;
-    background-color: $c-stageBackground;
+    @include flexCenter(column, none, none);
+    img {
+      width: 40%;
+      align-self: center;
+    }
   }
   #{&}__description {
     width: 30%;
     padding: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    @include flexCenter(column, space-between, none);
+    background-color: $c-stageBackground;
   }
   #{&}__description,
   #{&}__stage {
@@ -134,9 +132,6 @@
 .hot-sauce-footer {
   height: 10%;
   margin-top: 30px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
+  @include flexCenter(column, center, center);
   background-color: $c-grayFooter;
 }
