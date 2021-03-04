@@ -79,6 +79,10 @@
       "id": 5,
       "title": "Cholula",
       "subtitle": "A brand of chili-based hot sauce.",
+      "img": {
+        "src": "cholula",
+        "alt": "Cholula bottle"
+      },
       "productView": {
         "title": "Cholula",
         "description": "The YUCATECO SALSAS Y CONDIMENTOS, a company created in 1968 by Mr. Priamo J. Gamboa, started out as a small family business devoted to the production of homemade habanero pepper sauces. Nowadays it is a world-renowned company, pioneer in producing and exporting fiery habanero pepper sauces, as well as a variety of traditional Mexican products to the U.S.,  Europe, Asia and Oceania. In addition, we have a modern manufacturing facility and our own Habanero and Annatto fields, which are our main raw materials. In 1999, the international magazine industry, the Fiery Foods Magazine, honored with a 1st Place in taste and presentation to our sauce KutBil-Ik among a sample of 400 brands worldwide. - See more at: http://www.elyucateco.com/company#sthash.de3AdMbg.dpuf",

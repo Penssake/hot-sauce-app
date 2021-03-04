@@ -21,6 +21,3 @@ const HotSauceItem = ({ item, onDeleteSauce }) => {
 }
 
 export default HotSauceItem;
-
-// TODO clean up component, make button component for clickable icons 
-// remove border from button that is clicked
