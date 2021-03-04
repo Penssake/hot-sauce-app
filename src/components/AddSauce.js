@@ -47,7 +47,7 @@ const AddSauce = ({ onAddSauce }) => {
             </div>
             <div className="form-control">
                 <label>Description</label>
-                <input type="text" placeholder="Description" value={description} onChange={(e) => setDescription(e.target.value)}></input>
+                <textarea placeholder="Description" value={description} onChange={(e) => setDescription(e.target.value)}></textarea>
             </div>
             <div className="form-control">
                 <label>Image Url</label>
