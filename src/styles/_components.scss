@@ -115,9 +115,19 @@
   #{&}__description {
     width: 30%;
     padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
-  #{&}__description, #{&}__stage {
+  #{&}__description,
+  #{&}__stage {
     padding: 30px;
+  }
+  #{&}__home {
+    width: 50px;
+    img {
+      width: 100%;
+    }
   }
 }
 
