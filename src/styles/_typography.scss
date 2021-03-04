@@ -1,0 +1,30 @@
+h1,
+h2,
+h3,
+h4,
+h5 {
+  line-height: 21px;
+  font-weight: 300;
+}
+h1 {
+  font-size: 34px;
+  @media (min-width: 800px) {
+    font-size: 48px;
+  }
+}
+h2 {
+  font-size: 23px;
+  margin-top: 1rem;
+  @media (min-width: 800px) {
+    font-size: 26px;
+  }
+}
+h3 {
+  font-size: 18px;
+  line-height: 24px;
+}
+p {
+  font-size: 16px;
+  line-height: 20px;
+  margin-top: 15px;
+}

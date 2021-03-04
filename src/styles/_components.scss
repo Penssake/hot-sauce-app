@@ -1,0 +1,226 @@
+.hot-sauce-app {
+  font-family: "Open Sans", sans-serif;
+  height: 100vh;
+  position: relative;
+}
+
+.hot-sauce-header {
+  height: 10%;
+  @include flexCenter(row, none, center);
+  padding-left: 20px;
+  color: $c-headerFontColor;
+  #{&}__image {
+    height: 100%;
+    margin-right: 10px;
+  }
+}
+
+.grid-container {
+  display: grid;
+  padding-left: 30px;
+  padding-right: 30px;
+  grid-template-rows: repeat(2, minmax(428px, min-content));
+  grid-template-columns: repeat(auto-fill, 250px);
+  grid-template-columns: repeat(auto-fit, 250px);
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  @include respond(xl-desktop) {
+    grid-template-columns: repeat(auto-fill, 300px);
+    grid-template-columns: repeat(auto-fit, 300px);
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  }
+
+  #{&}__item {
+    margin: 10px 20px 30px 20px;
+    padding: 10px 10px 0 10px;
+    @include flexCenter(column, none, none);
+    border-bottom: 22px solid $c-border;
+    text-align: center;
+    transition: box-shadow 300ms ease-in-out;
+    &:hover {
+      box-shadow: 1px 8px 20px grey;
+      .grid-container__product-image {
+        animation: shakeBottle 1s cubic-bezier(0.7, 0.19, 0.19, 0.07) both;
+      }
+    }
+  }
+
+  #{&}__product-stage {
+    @include flexCenter(column, none, none);
+    position: relative;
+    width: 100%;
+    height: 250px;
+    &--backlight {
+      width: 50%;
+      height: 50%;
+      top: 15%;
+      left: 25%;
+      z-index: 1;
+      background-color: $c-grayHighlight;
+      position: absolute;
+    }
+  }
+
+  #{&}__content {
+    text-align: center;
+    width: 75%;
+    margin-left: 12.5%;
+    min-height: 140px;
+  }
+
+  #{&}__footer {
+    height: 40px;
+    @include flexCenter(column, center, none);
+  }
+
+  #{&}__product-image,
+  #{&}__arrow {
+    align-self: center;
+    z-index: 2;
+  }
+
+  #{&}__close {
+    align-self: flex-end;
+    transition: transform 300ms ease-in-out;
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  #{&}__arrow {
+    transform: scale(1.2);
+    margin-bottom: 20px;
+    transition: transform 300ms ease-in-out;
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.4);
+    }
+  }
+}
+
+.product-view {
+  @include flexCenter(column, none, none);
+  @include respond(desktop) {
+    height: 76%;
+    @include flexCenter(row, none, none);
+  }
+  width: 100vw;
+  padding-left: 30px;
+  padding-right: 30px;
+  #{&}__stage {
+    width: 100%;
+    @include respond(desktop) {
+      width: 70%;
+    }
+    @include flexCenter(column, none, none);
+    img {
+      width: 100%;
+      align-self: center;
+      @include respond(desktop) {
+        width: 40%;
+        max-height: 100%;
+      }
+    }
+  }
+  #{&}__description {
+    padding: 30px;
+    width: 100%;
+    @include respond(desktop) {
+      width: 30%;
+    }
+    @include flexCenter(column, space-between, none);
+    background-color: $c-stageBackground;
+  }
+  #{&}__description,
+  #{&}__stage {
+    padding: 30px;
+  }
+  #{&}__home {
+    width: 50px;
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.hot-sauce-footer {
+  height: 10%;
+  margin-top: 30px;
+  @include flexCenter(column, center, center);
+  background-color: $c-grayFooter;
+}
+
+.home-view {
+  #{&}__addSauce {
+    height: 20%;
+    button {
+      @include flexCenter(row, center, center);
+      right: 60px;
+      top: 30px;
+      position: absolute;
+      width: 200px;
+      color: $c-redAdd;
+    }
+    p {
+      margin-top: 0;
+    }
+  }
+  #{&}__plus {
+    width: 30px;
+    transition: transform 300ms ease-in-out;
+    @include flexCenter(row, center, center);
+    cursor: pointer;
+    &--rotate {
+      transform: rotate(45deg);
+      cursor: pointer;
+    }
+  }
+}
+
+.add-form {
+  position: absolute;
+  z-index: 3;
+  padding: 20px;
+  background-color: $c-grayBorder;
+  @include flexCenter(column, none, none);
+  width: 100%;
+  @include respond(tab-port) {
+    width: 30%;
+    margin-left: 70%;
+    top: 10%;
+    right: 30px;
+  }
+  color: $c-formFontColor;
+  #{&}__form-control input {
+    min-height: 40px;
+    padding: 5px 8px;
+    width: 100%;
+    margin-top: 5px;
+    background: $c-white;
+  }
+  #{&}__form-control textarea {
+    min-height: 200px;
+    padding: 5px 8px;
+    width: 100%;
+    margin-top: 5px;
+    background: $c-white;
+  }
+  #{&}__btn {
+    background-color: rgba(0, 0, 0, 0.2);
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.6);
+    border: 0px;
+    outline: none;
+    display: inline-block;
+    padding: 8px 22px;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+  }
+}
