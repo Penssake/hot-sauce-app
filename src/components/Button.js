@@ -1,17 +1,16 @@
-import { A } from "hookrouter";
+import { Link } from "react-router-dom";
 import Icon from "./Icon";
 
-const Button = ({ click, type, href, icon, classKey }) => {
-    const Link = type === 'link';
-
+const Button = ({ click, href, icon, classKey, id }) => {
+    const LinkType = href && true;
     return (
-        <>
-            {!Link ?
-                <button className={classKey} onClick={() => click()}><Icon srcKey={icon} /></button>
+        <div className={classKey}>
+            {!LinkType ?
+                <button onClick={() => click(id)}><Icon srcKey={icon} /></button>
                 :
-                <A classKey={classKey} href={href}><Icon srcKey={icon} /></A>
+                <Link to={`/product/${id}`}><Icon srcKey={icon} /></Link>
             }
-        </>
+        </div>
     )
 }
 

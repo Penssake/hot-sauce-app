@@ -1,7 +1,8 @@
-const ProductView = ({ id }) => {
+const ProductView = ({ id, data }) => {
+    const current = data.filter(item => item.id === Number(id));
     return (
         <>
-            {id}
+            <h1>{current[0].title}</h1>
         </>
     )
 }
