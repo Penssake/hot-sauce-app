@@ -8,7 +8,7 @@ const Button = ({ click, href, icon, classKey, id }) => {
     return (
         <div className={classKey}>
             {!LinkType ?
-                <button onClick={() => click(id)}><Icon srcKey={icon} /></button>
+                <button onClick={id ? () => click(id) : click()}><Icon srcKey={icon} /></button>
                 :
                 <Link to={link}><Icon srcKey={icon} /></Link>
             }

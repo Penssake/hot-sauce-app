@@ -1,13 +1,14 @@
 import { useState } from "react";
 import AddSauce from '../components/AddSauce';
 import HotSauceList from "../components/HotSauceList";
-
+import Icon from '../components/Icon';
 import data from '../data/hotsauces.json';
 
 const Home = () => {
     const DATA = data.list;
     const [hotSauces, setHotSauce] = useState(DATA);
-  
+    const [showAddForm, setShowAddForm] = useState(false);
+
     // delete sauce
     const deleteSauce = (id) => {
         setHotSauce(hotSauces.filter((sauce) => sauce.id !== id))
@@ -27,11 +28,21 @@ const Home = () => {
 
         setHotSauce([newSauce, ...hotSauces])
     }
+
+    const showForm = () => {
+        setShowAddForm(!showAddForm);
+    }
     return (
-        <>
-            <AddSauce onAddSauce={addNewSauce} />
+        <div className="home-view">
+            <div className="home-view__addSauce">
+                <button onClick={showForm}>
+                    <p>Add Sauce</p>
+                    <Icon srcKey="plus" classKey={!showAddForm ? "home-view__plus" : "home-view__plus home-view__plus--rotate"} />
+                </button>
+            </div>
+            {showAddForm && <AddSauce onAddSauce={addNewSauce} />}
             <HotSauceList hotSauces={hotSauces} onDeleteSauce={deleteSauce} />
-        </>
+        </div>
     )
 }
 

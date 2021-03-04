@@ -1,6 +1,7 @@
 .hot-sauce-app {
   font-family: "Open Sans", sans-serif;
   height: 100vh;
+  position: relative;
 }
 
 .hot-sauce-header {
@@ -147,4 +148,79 @@
   margin-top: 30px;
   @include flexCenter(column, center, center);
   background-color: $c-grayFooter;
+}
+
+.home-view {
+  #{&}__addSauce {
+    height: 20%;
+    button {
+      @include flexCenter(row, center, center);
+      right: 60px;
+      top: 30px;
+      position: absolute;
+      width: 200px;
+      color: $c-redAdd;
+    }
+    p {
+      margin-top: 0;
+    }
+  }
+  #{&}__plus {
+    width: 30px;
+    transition: transform 300ms ease-in-out;
+    @include flexCenter(row, center, center);
+    cursor: pointer;
+    &--rotate {
+      transform: rotate(45deg);
+      cursor: pointer;
+    }
+  }
+}
+
+.add-form {
+  position: absolute;
+  z-index: 3;
+  padding: 20px;
+  background-color: $c-grayBorder;
+  @include flexCenter(column, none, none);
+  width: 100%;
+  @include respond(tab-port) {
+    width: 30%;
+    margin-left: 70%;
+    top: 10%;
+    right: 30px;
+  }
+  color: $c-formFontColor;
+  #{&}__form-control input {
+    min-height: 40px;
+    padding: 5px 8px;
+    width: 100%;
+    margin-top: 5px;
+    background: $c-white;
+  }
+  #{&}__form-control textarea {
+    min-height: 200px;
+    padding: 5px 8px;
+    width: 100%;
+    margin-top: 5px;
+    background: $c-white;
+  }
+  #{&}__btn {
+    background-color: rgba(0, 0, 0, 0.2);
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.6);
+    border: 0px;
+    outline: none;
+    display: inline-block;
+    padding: 8px 22px;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+  }
 }

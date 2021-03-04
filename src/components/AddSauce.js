@@ -36,33 +36,33 @@ const AddSauce = ({ onAddSauce }) => {
     }
 
     return (
-        <form onSubmit={onSubmit}>
-            <div className="form-control">
+        <form onSubmit={onSubmit} className="add-form">
+            <div className="add-form__form-control">
                 <label>Sauce title</label>
                 <input type="text" placeholder="Sauce title" value={title} onChange={(e) => setTitle(e.target.value)}></input>
             </div>
-            <div className="form-control">
+            <div className="add-form__form-control">
                 <label>Sub title</label>
                 <input type="text" placeholder="Sub title" value={subTitle} onChange={(e) => setSubTitle(e.target.value)}></input>
             </div>
-            <div className="form-control">
+            <div className="add-form__form-control">
                 <label>Description</label>
-                <textarea placeholder="Description" value={description} onChange={(e) => setDescription(e.target.value)}></textarea>
+                <input type="text" placeholder="Description" value={description} onChange={(e) => setDescription(e.target.value)}></input>
             </div>
-            <div className="form-control">
+            <div className="add-form__form-control">
                 <label>Image Url</label>
                 <input type="text" placeholder="Image Url" value={imgUrl} onChange={(e) => setImageUrl(e.target.value)}></input>
             </div>
-            <div className="form-control">
+            <div className="add-form__form-control">
                 <label>Image Alt</label>
                 <input type="text" placeholder="Image Alt" value={imgAlt} onChange={(e) => setImageAlt(e.target.value)}></input>
             </div>
-            <div className="form-control">
+            <div className="add-form__form-check">
                 <label>Use default image?</label>
                 <input type="checkbox" value={useDefaultImage} checked={useDefaultImage} onChange={(e) => setUseDefaultImage(e.currentTarget.checked)}></input>
             </div>
 
-            <input type="submit" value="Save Sauce" className="btn"></input>
+            <input type="submit" value="Save Sauce" className="add-form__btn"></input>
         </form>
     )
 }
