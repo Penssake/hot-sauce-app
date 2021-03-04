@@ -1,0 +1,41 @@
+// MEDIA QUERY MANAGER
+
+// 1em = 16px
+
+/*
+1800px + : XXLarge 
+1200 - 1800px: Large (75em - 112.5em)
+900 - 1200px: Tablet landscape (56.25em - 75em)
+600 - 900px: Tablet portrait (37.5em - 56.25em)
+0 - 600px: Phone (no querie used, write all mobile code up top)
+*/
+
+/*
+- phone -- not used -- mobile first
+- tab-port
+- tab-port
+- desktop
+- xl-desktop 
+- bg-resolution
+*/
+
+@mixin respond($breakpoint) {
+    @if ($breakpoint == xl-desktop) {
+      @media (min-width: 112.5em) {
+        // 1800px
+        @content;
+      }
+    }
+    @if ($breakpoint == desktop) {
+      @media (min-width: 75em) {
+        // 1200px
+        @content;
+      }
+    }
+    @if ($breakpoint == tab-port) {
+      @media (min-width: 46.25em) {
+        // 900px
+        @content;
+      }
+    }
+  }
