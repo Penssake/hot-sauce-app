@@ -2,7 +2,7 @@ import HotSauceItem from "./HotSauceItem";
 
 const HotSauceList = ({ hotSauces }) => {
     return (
-        <ul>
+        <ul className="grid-container">
             {hotSauces.map(item => (
                 <HotSauceItem item={item} key={item.id} />
             ))}
