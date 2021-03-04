@@ -17,11 +17,11 @@ const Home = () => {
     // add sauce
     const addNewSauce = (sauce) => {
         const id = Math.floor(Math.random() * 10000 + 1);
-
+        console.log(sauce.subtitle)
         const newSauce = {
             id: id,
             title: sauce.title,
-            subTitle: sauce.subTitle,
+            subtitle: sauce.subtitle,
             description: sauce.description,
             img: sauce.img
         }
