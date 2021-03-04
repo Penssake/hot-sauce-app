@@ -3,7 +3,7 @@ import Icon from "./Icon";
 const Header = ({ text, icon }) => {
     return (
         <header className="hot-sauce-header">
-            <Icon src={icon.src} alt={icon.alt} />
+            <Icon srcKey={icon.src} alt={icon.alt} />
             <h1>{text}</h1>
         </header>
     )

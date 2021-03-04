@@ -28,4 +28,3 @@ const HotSauceItem = ({ item }) => {
 }
 
 export default HotSauceItem;
-// alt for accessibility
