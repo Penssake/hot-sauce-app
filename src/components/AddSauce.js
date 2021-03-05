@@ -16,6 +16,10 @@ const initialFormState = {
 const AddSauce = ({ onAddSauce }) => {
     const [formState, dispatch] = useReducer(formReducer, initialFormState);
 
+    // errors
+    const [titleError, setTitleError] = useState(false);
+    const [subTitleError, setSubTitleError] = useState(false);
+
     const handleTextChange = (e) => {
         dispatch({
             type: "INPUT TEXT",
@@ -23,10 +27,6 @@ const AddSauce = ({ onAddSauce }) => {
             payload: e.target.value
         })
     }
-
-    // errors
-    const [titleError, setTitleError] = useState(false);
-    const [subTitleError, setSubTitleError] = useState(false);
 
     let descriptionArray = [];
 
@@ -59,16 +59,21 @@ const AddSauce = ({ onAddSauce }) => {
         formState.productView.img = formState.img;
         formState.productView.url = formState.url;
 
-        if (formState.description) {
-            const id = Math.floor(Math.random() * 10000 + 1);
+        const id = Math.floor(Math.random() * 10000 + 1);
 
+        if (formState.description) {
             descriptionArray.push({
                 id: id,
                 text: formState.description
             })
-
-            formState.productView.description = descriptionArray;
+        } else {
+            descriptionArray.push({
+                id: id,
+                text: "No description added"
+            })
         }
+
+        formState.productView.description = descriptionArray;
 
         onAddSauce({ formState })
     }
