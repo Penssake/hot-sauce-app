@@ -181,11 +181,15 @@
     height: 20%;
     button {
       @include flexCenter(row, center, center);
-      right: 60px;
-      top: 30px;
       position: absolute;
       width: 200px;
       color: $c-addText;
+      right: 10px;
+      top: 15px;
+      @include respond(tab-port) {
+        right: 60px;
+        top: 30px;
+      }
     }
     p {
       margin-top: 0;
@@ -225,7 +229,8 @@
     right: 30px;
   }
   color: $c-formFontColor;
-  #{&}__form-control input, textarea {
+  #{&}__form-control input,
+  textarea {
     height: 40px;
     padding: 5px 8px;
     width: 100%;
@@ -241,7 +246,6 @@
     cursor: pointer;
   }
 }
-
 
 /*
 ***
