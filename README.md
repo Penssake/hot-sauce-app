@@ -52,8 +52,6 @@ $ yarn run build
  
 - Simplistic card design with a shadow added to the hot sauce bottles and smaller back highlight div to create depth and texture. This to me, enhanced the purpose of the site, showcasing a product.
  
-- Simplistic card design with a shadow added to the hot sauce bottles and smaller back highlight div to create depth and texture. This to me, enhanced the purpose of the site, showcasing a product.
- 
 - Unity of elements. For the icons and buttons, the styles are similar or exact to create a natural alignment of visual elements.
  
 - For the colors, I extracted a color palette from the bottles using a color picker tool. Since the images themselves are bright, I chose a darker theme in order to not overwhelm the product.
