@@ -19,24 +19,22 @@ const App = () => {
 
   // delete sauce
   const deleteSauce = (id) => {
-      setHotSauce(hotSauces.filter((sauce) => sauce.id !== id))
+    setHotSauce(hotSauces.filter((sauce) => sauce.id !== id))
   }
 
   // add sauce
   const addNewSauce = (sauce) => {
-      console.log(sauce)
-      const id = Math.floor(Math.random() * 10000 + 1);
-      const newSauce = {
-          id: id,
-          title: sauce.title,
-          subtitle: sauce.subtitle,
-          description: sauce.description,
-          img: sauce.img,
-          productView: sauce.productView,
-          url: sauce.url 
-      }
-
-      setHotSauce([newSauce, ...hotSauces])
+    const id = Math.floor(Math.random() * 10000 + 1);
+    const newSauce = {
+      id: id,
+      title: sauce.formState.title,
+      subtitle: sauce.formState.subtitle,
+      description: sauce.formState.description,
+      img: sauce.formState.img,
+      productView: sauce.formState.productView,
+      url: sauce.formState.url
+    }
+    setHotSauce([newSauce, ...hotSauces])
   }
 
   return (

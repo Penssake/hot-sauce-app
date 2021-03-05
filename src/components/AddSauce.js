@@ -1,58 +1,81 @@
-import { useState } from "react"
+import { useState, useReducer } from "react"
+
+import formReducer from "../reducers/form";
+
+const initialFormState = {
+    title: "",
+    subtitle: "",
+    description: "",
+    imgUrl: "",
+    imgAlt: "",
+    img: {},
+    productView: {},
+    url: false
+};
 
 const AddSauce = ({ onAddSauce }) => {
-    const [title, setTitle] = useState("");
-    const [titleError, setTitleError] = useState(false);
-    const [subtitle, setSubTitle] = useState("");
-    const [subTitleError, setSubTitleError] = useState(false);
-    const [description, setDescription] = useState("");
-    const [imgUrl, setImageUrl] = useState("");
-    const [imgAlt, setImageAlt] = useState("");
+    const [formState, dispatch] = useReducer(formReducer, initialFormState);
 
-    let img = {};
-    let productView = {};
-    let url = false;
+    // errors
+    const [titleError, setTitleError] = useState(false);
+    const [subTitleError, setSubTitleError] = useState(false);
+
+    const handleTextChange = (e) => {
+        dispatch({
+            type: "INPUT TEXT",
+            field: e.target.name,
+            payload: e.target.value
+        })
+    }
+
+    let descriptionArray = [];
 
     const onSubmit = (e) => {
         e.preventDefault();
         let errors = 0;
 
         // error handling for required fields
-        if (!title) {
+        if (!formState.title) {
             setTitleError(true)
             errors += 1;
         }
-        if (!subtitle) {
+        if (!formState.subtitle) {
             setSubTitleError(true)
             errors += 1;
         }
 
         if (errors) return;
 
-        if (imgUrl) {
-            img.src = imgUrl;
-            url = true;
+        if (formState.imgUrl) {
+            formState.img.src = formState.imgUrl;
+            formState.url = true;
         }
-        else img.src = "greenPepper"
+        else formState.img.src = "greenPepper"
 
-        if (imgAlt) img.alt = imgAlt;
-        else img.alt = "Green pepper"
+        if (formState.imgAlt) formState.img.alt = formState.imgAlt;
+        else formState.img.alt = "Green pepper"
 
-        productView.title = title;
-        productView.img = img;
-        productView.url = url;
+        formState.productView.title = formState.title;
+        formState.productView.img = formState.img;
+        formState.productView.url = formState.url;
 
-        if (description) {
-            productView.description = description;
+        const id = Math.floor(Math.random() * 10000 + 1);
+
+        if (formState.description) {
+            descriptionArray.push({
+                id: id,
+                text: formState.description
+            })
+        } else {
+            descriptionArray.push({
+                id: id,
+                text: "No description added"
+            })
         }
 
-        onAddSauce({ title, subtitle, description, img, productView, url })
+        formState.productView.description = descriptionArray;
 
-        setTitle("")
-        setSubTitle("")
-        setDescription("")
-        setImageUrl("")
-        setImageAlt("")
+        onAddSauce({ formState })
     }
 
     const handleFocus = () => {
@@ -63,27 +86,27 @@ const AddSauce = ({ onAddSauce }) => {
     return (
         <form onSubmit={onSubmit} className="add-form">
             <div className="add-form__form-control">
-                <label>Sauce title<span className="required">*</span>{titleError && <span className="error">Title is required</span>}</label>
-                <input type="text" placeholder="Sauce title" value={title} onChange={(e) => setTitle(e.target.value)} onFocus={handleFocus}></input>
+                <label>Sauce title<span className="required"> *</span>{titleError && <span className="error">Title is required</span>}</label>
+                <input type="text" placeholder="Sauce title" name="title" value={formState.title} onChange={(e) => handleTextChange(e)} onFocus={handleFocus}></input>
             </div>
             <div className="add-form__form-control">
-                <label>Sub title<span className="required">*</span>{subTitleError && <span className="error">Sub title is required</span>}</label>
-                <input type="text" placeholder="Sub title" value={subtitle} onChange={(e) => setSubTitle(e.target.value)} onFocus={handleFocus}></input>
+                <label>Sub title<span className="required"> *</span>{subTitleError && <span className="error">Sub title is required</span>}</label>
+                <input type="text" placeholder="Sub title" name="subtitle" value={formState.subtitle} onChange={(e) => handleTextChange(e)} onFocus={handleFocus}></input>
             </div>
             <div className="add-form__form-control">
                 <label>Description</label>
-                <input type="text" placeholder="Description" value={description} onChange={(e) => setDescription(e.target.value)} onFocus={handleFocus}></input>
+                <input type="text" placeholder="Description" name="description" value={formState.description} onChange={(e) => handleTextChange(e)} onFocus={handleFocus}></input>
             </div>
             <div className="add-form__form-control">
                 <label>Image Url</label>
-                <input type="text" placeholder="Image Url" value={imgUrl} onChange={(e) => setImageUrl(e.target.value)} onFocus={handleFocus}></input>
+                <input type="text" placeholder="Image Url" name="imgUrl" value={formState.imgUrl} onChange={(e) => handleTextChange(e)} onFocus={handleFocus}></input>
             </div>
             <div className="add-form__form-control">
                 <label>Image Alt</label>
-                <input type="text" placeholder="Image Alt" value={imgAlt} onChange={(e) => setImageAlt(e.target.value)} onFocus={handleFocus}></input>
+                <input type="text" placeholder="Image Alt" name="imgAlt" value={formState.imgAlt} onChange={(e) => handleTextChange(e)} onFocus={handleFocus}></input>
             </div>
 
-            <input type="submit" value="Save Sauce" className="add-form__btn"></input>
+            <input type="submit" value="Save Sauce" className="add-form__btn btn"></input>
         </form>
     )
 }
