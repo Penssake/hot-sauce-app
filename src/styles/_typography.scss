@@ -41,8 +41,11 @@ p {
 * BY CLASS
 */
 
-.error {
+.error, .required {
   color: $c-errorColor;
   font-weight: bold;
+}
+
+.error {
   font-size: 14px;
 }

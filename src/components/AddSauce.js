@@ -86,11 +86,11 @@ const AddSauce = ({ onAddSauce }) => {
     return (
         <form onSubmit={onSubmit} className="add-form">
             <div className="add-form__form-control">
-                <label>Sauce title<span className="required">*</span>{titleError && <span className="error">Title is required</span>}</label>
+                <label>Sauce title<span className="required"> *</span>{titleError && <span className="error">Title is required</span>}</label>
                 <input type="text" placeholder="Sauce title" name="title" value={formState.title} onChange={(e) => handleTextChange(e)} onFocus={handleFocus}></input>
             </div>
             <div className="add-form__form-control">
-                <label>Sub title<span className="required">*</span>{subTitleError && <span className="error">Sub title is required</span>}</label>
+                <label>Sub title<span className="required"> *</span>{subTitleError && <span className="error">Sub title is required</span>}</label>
                 <input type="text" placeholder="Sub title" name="subtitle" value={formState.subtitle} onChange={(e) => handleTextChange(e)} onFocus={handleFocus}></input>
             </div>
             <div className="add-form__form-control">
