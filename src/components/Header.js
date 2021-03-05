@@ -17,7 +17,7 @@ const Header = ({ text, icon }) => {
                 <Image srcKey={icon.src} alt={icon.alt} classKey="hot-sauce-header__image" />
                 <h1>{text}</h1>
             </div>
-            {viewHomeButton && <Button href="/" icon="home" classKey="hot-sauce-header__home" link={true} />}
+            {viewHomeButton && <Button href="/" text="Back to sauce" classKey="hot-sauce-header__home" link={true} />}
         </header>
     )
 }
