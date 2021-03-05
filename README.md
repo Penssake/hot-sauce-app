@@ -41,7 +41,7 @@ $ yarn run build
 - **Sass preprocessor** enabled
 - Basic setup for **core styles** in `/styles/main.scss`, including custom normalize.
 - **Abstract sass utilities** (variables, mixins, functions) are imported globally via style resources, giving you access to sass variables etc.
-- **Media queries**: defined as `styles/mixins.scss` in `/styles/abstracts/_variables.scss`. \
+- **Media queries**: defined as `styles/mixins.scss`\
   Usage: \
   `@mixin respond($breakpoint) { ... }`, \
 - **Typography**: see `styles/_typography.scss`
