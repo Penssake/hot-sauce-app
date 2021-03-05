@@ -6,7 +6,7 @@ const HotSauceItem = ({ item, onDeleteSauce }) => {
         <li className="grid-container__item">
             <Button click={onDeleteSauce} id={item.id} icon="close" classKey="grid-container__close" />
             <div className="grid-container__product-stage">
-                <Image srcKey={item.img.src} alt={item.img.alt} classKey="grid-container__product-image" />
+                <Image srcKey={item.img.src} alt={item.img.alt} url={item.url || false} classKey="grid-container__product-image" />
                 <div className="grid-container__product-stage--backlight"></div>
             </div>
             <div className="grid-container__content">

@@ -31,7 +31,8 @@ const App = () => {
           subtitle: sauce.subtitle,
           description: sauce.description,
           img: sauce.img,
-          productView: sauce.productView
+          productView: sauce.productView,
+          url: sauce.url 
       }
 
       setHotSauce([newSauce, ...hotSauces])

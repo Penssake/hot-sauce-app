@@ -11,6 +11,7 @@ const AddSauce = ({ onAddSauce }) => {
 
     let img = {};
     let productView = {};
+    let url = false;
 
     const onSubmit = (e) => {
         e.preventDefault();
@@ -28,7 +29,10 @@ const AddSauce = ({ onAddSauce }) => {
 
         if (errors) return;
 
-        if (imgUrl) img.src = imgUrl;
+        if (imgUrl) {
+            img.src = imgUrl;
+            url = true;
+        }
         else img.src = "greenPepper"
 
         if (imgAlt) img.alt = imgAlt;
@@ -37,11 +41,11 @@ const AddSauce = ({ onAddSauce }) => {
         productView.title = title;
         productView.img = img;
 
-        if(description) {
+        if (description) {
             productView.description = description;
         }
 
-        onAddSauce({ title, subtitle, description, img, productView })
+        onAddSauce({ title, subtitle, description, img, productView, url })
 
         setTitle("")
         setSubTitle("")
