@@ -15,14 +15,35 @@ const App = () => {
 
   const [header] = useState(DATA.header);
   const [footer] = useState(DATA.footer);
+  const [hotSauces, setHotSauce] = useState(DATA.list);
+
+  // delete sauce
+  const deleteSauce = (id) => {
+      setHotSauce(hotSauces.filter((sauce) => sauce.id !== id))
+  }
+
+  // add sauce
+  const addNewSauce = (sauce) => {
+      const id = Math.floor(Math.random() * 10000 + 1);
+      const newSauce = {
+          id: id,
+          title: sauce.title,
+          subtitle: sauce.subtitle,
+          description: sauce.description,
+          img: sauce.img,
+          productView: sauce.productView
+      }
+
+      setHotSauce([newSauce, ...hotSauces])
+  }
 
   return (
     <BrowserRouter>
       <div className="hot-sauce-app">
         <Header text={header.text} icon={header.icon} />
         <Switch>
-          <Route path='/' component={Home} exact />
-          <Route path='/product/:id' render={(props) => <ProductView id={props.match.params.id} data={DATA.list} />} />
+          <Route path='/' exact render={() => <Home addNewSauce={addNewSauce} hotSauces={hotSauces} deleteSauce={deleteSauce} />} />
+          <Route path='/product/:id' render={(props) => <ProductView id={props.match.params.id} data={hotSauces} />} />
         </Switch>
         <Footer text={footer.text} number={footer.number} />
       </div>

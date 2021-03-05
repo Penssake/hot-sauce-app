@@ -1,3 +1,10 @@
+
+
+/*
+***
+* BY ELEMENT
+*/
+
 h1,
 h2,
 h3,
@@ -27,4 +34,15 @@ p {
   font-size: 16px;
   line-height: 20px;
   margin-top: 15px;
+}
+
+/*
+***
+* BY CLASS
+*/
+
+.error {
+  color: $c-errorColor;
+  font-weight: bold;
+  font-size: 14px;
 }

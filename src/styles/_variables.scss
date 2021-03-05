@@ -1,16 +1,28 @@
 $green: #0d4028;
+$green-accent: #1b8553;
 $gray: #d3d8eb;
-$darkGray: #B3B7C7;
-$red: #a60311;
+$blackOpactyLight: rgba(0, 0, 0, 0.2);
+$blackOpactyDark: rgba(0, 0, 0, 0.6);
+$red: #ff3333;
+$errorRed: rgba($red, 0.6);
 $white: #fff;
 
+// header
 $c-headerFontColor: $red;
-$c-border: $green;
-$c-grayHighlight: $gray;
-$c-grayFooter: $gray;
+
+// product cards
+$c-cardBorder: $green;
+$c-grayBackLight: $gray;
 $c-stageBackground: $gray;
-$c-grayBorder: $gray;
+
+// form
+$c-formBackground: $gray;
 $c-formFontColor: $green;
-$c-grayBackground: $darkGray;
 $c-white: $white;
-$c-redAdd: $red
+$c-addText: $green-accent;
+$c-buttonColor: $blackOpactyLight;
+$c-buttonShadow: $blackOpactyDark;
+$c-errorColor: $errorRed;
+
+// footer
+$c-grayFooter: $gray;

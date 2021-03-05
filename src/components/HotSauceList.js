@@ -1,6 +1,7 @@
 import HotSauceItem from "./HotSauceItem";
 
 const HotSauceList = ({ hotSauces, onDeleteSauce }) => {
+    console.log(hotSauces)
     return (
         <ul className="grid-container">
             {hotSauces.map(item => (
