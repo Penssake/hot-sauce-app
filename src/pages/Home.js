@@ -2,32 +2,10 @@ import { useState } from "react";
 import AddSauce from '../components/AddSauce';
 import HotSauceList from "../components/HotSauceList";
 import Icon from '../components/Icon';
-// import data from '../data/hotsauces.json';
 
-const Home = ({addNewSauce, hotSauces, deleteSauce}) => {
-    // const DATA = data.list;
-    // const [hotSauces, setHotSauce] = useState(DATA);
+const Home = ({ addNewSauce, deleteSauce, hotSauces }) => {
     const [showAddForm, setShowAddForm] = useState(false);
 
-    // // delete sauce
-    // const deleteSauce = (id) => {
-    //     setHotSauce(hotSauces.filter((sauce) => sauce.id !== id))
-    // }
-
-    // // add sauce
-    // const addNewSauce = (sauce) => {
-    //     const id = Math.floor(Math.random() * 10000 + 1);
-    //     console.log(sauce.subtitle)
-    //     const newSauce = {
-    //         id: id,
-    //         title: sauce.title,
-    //         subtitle: sauce.subtitle,
-    //         description: sauce.description,
-    //         img: sauce.img
-    //     }
-
-    //     setHotSauce([newSauce, ...hotSauces])
-    // }
 
     const showForm = () => {
         setShowAddForm(!showAddForm);
