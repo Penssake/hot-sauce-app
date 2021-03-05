@@ -106,15 +106,16 @@
   }
 
   #{&}__arrow {
-    width: 40px;
+    width: 100%;
     margin-bottom: 20px;
+    padding: 15px 22px;
     transition: transform 300ms ease-in-out;
+    border: 1px solid $c-grayBackLight;
     cursor: pointer;
-    img {
-      width: 100%;
-    }
+    transition: all 300ms ease-in-out;
     &:hover {
-      transform: scale(1.2);
+      color: $c-white;
+      background-color: $c-grayBackLight;
     }
   }
 }
@@ -135,6 +136,7 @@
   }
   #{&}__stage {
     @include flexCenter(column, none, none);
+    background-color: $c-stageBackground;
     img {
       width: 100%;
       align-self: center;
@@ -153,8 +155,6 @@
   #{&}__description {
     padding: 30px;
     width: 100%;
-    background-color: $c-stageBackground;
-    @include flexCenter(column, space-between, none);
     @include respond(desktop) {
       width: 30%;
     }
@@ -162,12 +162,6 @@
   #{&}__description,
   #{&}__stage {
     padding: 30px;
-  }
-  #{&}__home {
-    width: 50px;
-    img {
-      width: 100%;
-    }
   }
 }
 
@@ -221,6 +215,10 @@
   padding: 20px;
   background-color: $c-formBackground;
   width: 100%;
+  label {
+    display: inline-block;
+    margin-top: 10px;
+  }
   @include flexCenter(column, none, none);
   @include respond(tab-port) {
     width: 30%;
@@ -231,19 +229,26 @@
   color: $c-formFontColor;
   #{&}__form-control input,
   textarea {
-    height: 40px;
+    height: 47px;
     padding: 5px 8px;
     width: 100%;
     margin-top: 5px;
     background: $c-white;
   }
   #{&}__btn {
-    background-color: $c-buttonColor;
-    box-shadow: 0px 2px 2px $c-buttonShadow;
-    padding: 8px 22px;
+    background-color: $c-formBackground;
+    border: 1px solid $c-buttonAccent;
+    padding: 15px 22px;
+    margin-top: 20px;
     font-weight: normal;
     text-align: center;
     cursor: pointer;
+    color: $c-buttonAccent;
+    transition: all 300ms ease-in-out;
+    &:hover {
+      color: $c-white;
+      background-color: $c-buttonAccent;
+    }
   }
 }
 

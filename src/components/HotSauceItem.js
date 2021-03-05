@@ -14,7 +14,7 @@ const HotSauceItem = ({ item, onDeleteSauce }) => {
                 <p>{item.subtitle}</p>
             </div>
             <div className="grid-container__footer">
-                <Button href="/product/" id={item.id} icon="arrow" classKey="grid-container__arrow" link={true} />
+                <Button href="/product/" id={item.id} text="View sauce" classKey="grid-container__arrow" link={true} />
             </div>
         </li >
     )

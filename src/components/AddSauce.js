@@ -83,7 +83,7 @@ const AddSauce = ({ onAddSauce }) => {
                 <input type="text" placeholder="Image Alt" value={imgAlt} onChange={(e) => setImageAlt(e.target.value)} onFocus={handleFocus}></input>
             </div>
 
-            <input type="submit" value="Save Sauce" className="add-form__btn"></input>
+            <input type="submit" value="Save Sauce" className="add-form__btn btn"></input>
         </form>
     )
 }
