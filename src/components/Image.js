@@ -21,7 +21,7 @@ import tapatio2 from "../assets/labels/tapatio.png";
 import texasPete2 from "../assets/labels/texas-pete.png";
 import Cholula2 from "../assets/labels/cholula.png";
 
-const Image = ({ srcKey, alt, classKey }) => {
+const Image = ({ srcKey, alt, classKey, url }) => {
     const iconObj = {
         "redPepper": redPepper,
         "greenPepper": greenPepper,
@@ -46,7 +46,10 @@ const Image = ({ srcKey, alt, classKey }) => {
         "cholula2": Cholula2
     }
     return (
-        <img src={iconObj[srcKey]} alt={alt} className={classKey} />
+        <>
+            {!url && <img src={iconObj[srcKey]} alt={alt} className={classKey} />}
+            {url && <img src={srcKey} alt={alt} className={classKey} />}
+        </>
     )
 }
 
