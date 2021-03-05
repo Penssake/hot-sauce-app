@@ -40,6 +40,7 @@ const AddSauce = ({ onAddSauce }) => {
 
         productView.title = title;
         productView.img = img;
+        productView.url = url;
 
         if (description) {
             productView.description = description;
