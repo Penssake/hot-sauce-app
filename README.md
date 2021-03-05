@@ -1,7 +1,7 @@
 # Hot Sauce App
 
 ## URLs
-- Staging (`main` branch): **_[EDIT]_** https://jolly-noyce-53ff3d.netlify.app/
+- [Staging] (https://jolly-noyce-53ff3d.netlify.app/)
 
 ## Environment
 * [npm](https://www.npmjs.com/features?gclid=Cj0KCQiAi7XQBRDnARIsANeLIeu5j3pDVzQq5zmYrhf-OP5XJoSLq0BjIBVsAWnGXVQOYBMPRu1yZCcaAoj1EALw_wcB)
