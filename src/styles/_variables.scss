@@ -1,6 +1,8 @@
 $green: #0d4028;
 $green-accent: #1B8553;
 $gray: #d3d8eb;
+$blackOpactyLight: rgba(0, 0, 0, 0.2);
+$blackOpactyDark: rgba(0, 0, 0, 0.6);
 $red: #a60311;
 $white: #fff;
 
@@ -17,6 +19,8 @@ $c-formBackground: $gray;
 $c-formFontColor: $green;
 $c-white: $white;
 $c-addText: $green-accent;
+$c-buttonColor: $blackOpactyLight;
+$c-buttonShadow: $blackOpactyDark;
 
 // footer
 $c-grayFooter: $gray;

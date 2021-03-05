@@ -1,8 +1,18 @@
+/*
+***
+* GLOBAL APP STYLES
+*/
+
 .hot-sauce-app {
   font-family: "Open Sans", sans-serif;
   height: 100vh;
   position: relative;
 }
+
+/*
+***
+* SECTION FOR HEADER STYLES
+*/
 
 .hot-sauce-header {
   height: 10%;
@@ -14,6 +24,14 @@
     margin-right: 10px;
   }
 }
+
+/*
+***
+* SECTION FOR GRID STYLES
+***
+* Styles for the grid on home page
+***
+*/
 
 .grid-container {
   display: grid;
@@ -88,7 +106,6 @@
   }
 
   #{&}__arrow {
-    // transform: scale(1.2);
     width: 40px;
     margin-bottom: 20px;
     transition: transform 300ms ease-in-out;
@@ -102,38 +119,45 @@
   }
 }
 
+/*
+***
+* SECTION FOR PRODUCT VIEW PAGE
+*/
+
 .product-view {
   @include flexCenter(column, none, none);
+  width: 100vw;
+  padding-left: 30px;
+  padding-right: 30px;
   @include respond(desktop) {
     height: 76%;
     @include flexCenter(row, none, none);
   }
-  width: 100vw;
-  padding-left: 30px;
-  padding-right: 30px;
   #{&}__stage {
-    width: 100%;
-    @include respond(desktop) {
-      width: 70%;
-    }
     @include flexCenter(column, none, none);
     img {
       width: 100%;
       align-self: center;
       @include respond(desktop) {
-        width: 40%;
+        width: 30%;
         max-height: 100%;
+        margin-top: 5%;
       }
     }
+    width: 100%;
+    @include respond(desktop) {
+      width: 70%;
+    }
   }
+
   #{&}__description {
     padding: 30px;
     width: 100%;
+    background-color: $c-stageBackground;
+    @include flexCenter(column, space-between, none);
     @include respond(desktop) {
       width: 30%;
     }
-    @include flexCenter(column, space-between, none);
-    background-color: $c-stageBackground;
   }
   #{&}__description,
   #{&}__stage {
@@ -147,12 +171,10 @@
   }
 }
 
-.hot-sauce-footer {
-  height: 10%;
-  margin-top: 30px;
-  @include flexCenter(column, center, center);
-  background-color: $c-grayFooter;
-}
+/*
+***
+* SECTION FOR HOME PAGE STYLE
+*/
 
 .home-view {
   #{&}__addSauce {
@@ -181,13 +203,21 @@
   }
 }
 
+/*
+***
+* SECTION FOR FORM STYLE
+***
+* Styles for the add new sauce form on homepage
+***
+*/
+
 .add-form {
   position: absolute;
   z-index: 3;
   padding: 20px;
   background-color: $c-formBackground;
-  @include flexCenter(column, none, none);
   width: 100%;
+  @include flexCenter(column, none, none);
   @include respond(tab-port) {
     width: 30%;
     margin-left: 70%;
@@ -195,36 +225,50 @@
     right: 30px;
   }
   color: $c-formFontColor;
-  #{&}__form-control input {
-    min-height: 40px;
-    padding: 5px 8px;
-    width: 100%;
-    margin-top: 5px;
-    background: $c-white;
-  }
-  #{&}__form-control textarea {
-    min-height: 200px;
+  #{&}__form-control input, textarea {
+    height: 40px;
     padding: 5px 8px;
     width: 100%;
     margin-top: 5px;
     background: $c-white;
   }
   #{&}__btn {
-    background-color: rgba(0, 0, 0, 0.2);
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
-    border-radius: 2px;
-    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.6);
-    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.6);
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.6);
-    border: 0px;
-    outline: none;
-    display: inline-block;
+    background-color: $c-buttonColor;
+    box-shadow: 0px 2px 2px $c-buttonShadow;
     padding: 8px 22px;
-    margin-bottom: 0;
     font-weight: normal;
     text-align: center;
-    vertical-align: middle;
     cursor: pointer;
   }
+}
+
+
+/*
+***
+* SECTION FOR NOT FOUND STYLE
+*/
+
+.not-found {
+  width: 100vw;
+  height: 100vh;
+  @include flexCenter(column, center, center);
+  #{&}__home {
+    width: 40px;
+    img {
+      margin-top: 20px;
+      width: 100%;
+    }
+  }
+}
+
+/*
+***
+* SECTION FOR TEMP FOOTER STYLES
+*/
+
+.hot-sauce-footer {
+  height: 10%;
+  margin-top: 30px;
+  @include flexCenter(column, center, center);
+  background-color: $c-grayFooter;
 }
