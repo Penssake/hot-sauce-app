@@ -4,7 +4,6 @@ import NotFound from "../components/NotFound";
 const ProductView = ({ id, data }) => {
     const current = data.filter(item => item.id === Number(id));
     const product = current[0].productView;
-    console.log(product)
 
     return (
         <>
