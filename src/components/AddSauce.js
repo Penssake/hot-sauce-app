@@ -10,6 +10,7 @@ const AddSauce = ({ onAddSauce }) => {
     const [imgAlt, setImageAlt] = useState("");
 
     let img = {};
+    let productView = {};
 
     const onSubmit = (e) => {
         e.preventDefault();
@@ -33,7 +34,14 @@ const AddSauce = ({ onAddSauce }) => {
         if (imgAlt) img.alt = imgAlt;
         else img.alt = "Green pepper"
 
-        onAddSauce({ title, subtitle, description, img })
+        productView.title = title;
+        productView.img = img;
+
+        if(description) {
+            productView.description = description;
+        }
+
+        onAddSauce({ title, subtitle, description, img, productView })
 
         setTitle("")
         setSubTitle("")
