@@ -24,6 +24,7 @@ const App = () => {
 
   // add sauce
   const addNewSauce = (sauce) => {
+      console.log(sauce)
       const id = Math.floor(Math.random() * 10000 + 1);
       const newSauce = {
           id: id,
