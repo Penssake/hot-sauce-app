@@ -12,6 +12,7 @@ const AddSauce = ({ onAddSauce }) => {
     let img = {};
     let productView = {};
     let url = false;
+    let descriptionArray = [];
 
     const onSubmit = (e) => {
         e.preventDefault();
@@ -43,7 +44,14 @@ const AddSauce = ({ onAddSauce }) => {
         productView.url = url;
 
         if (description) {
-            productView.description = description;
+            const id = Math.floor(Math.random() * 10000 + 1);
+
+            descriptionArray.push({
+                id: id,
+                text: description
+            })
+
+            productView.description = descriptionArray;
         }
 
         onAddSauce({ title, subtitle, description, img, productView, url })

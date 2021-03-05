@@ -4,7 +4,7 @@ import Button from './Button';
 const HotSauceItem = ({ item, onDeleteSauce }) => {
     return (
         <li className="grid-container__item">
-            <Button click={onDeleteSauce} id={item.id} icon="close" classKey="grid-container__close" />
+            <Button click={onDeleteSauce} id={item.id} icon="close" classKey="grid-container__delete" />
             <div className="grid-container__product-stage">
                 <Image srcKey={item.img.src} alt={item.img.alt} url={item.url || false} classKey="grid-container__product-image" />
                 <div className="grid-container__product-stage--backlight"></div>

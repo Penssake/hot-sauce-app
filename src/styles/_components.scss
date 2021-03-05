@@ -96,10 +96,12 @@
     z-index: 2;
   }
 
-  #{&}__close {
+  #{&}__delete {
     align-self: flex-end;
     transition: transform 300ms ease-in-out;
-    cursor: pointer;
+    button {
+      cursor: pointer;
+    }
     &:hover {
       transform: scale(1.2);
     }
@@ -135,15 +137,34 @@
     @include flexCenter(row, none, none);
   }
   #{&}__stage {
+    height: 70vh;
     @include flexCenter(column, none, none);
     background-color: $c-stageBackground;
     img {
-      width: 100%;
+      width: auto;
+      max-height: 80%;
       align-self: center;
       @include respond(desktop) {
-        width: 30%;
-        max-height: 100%;
-        margin-top: 5%;
+        width: auto;
+        max-height: 80%;
+      }
+    }
+    div {
+      align-self: center;
+      @include respond(desktop) {
+        @include flexCenter(column, space-around, none);
+      }
+    }
+    div span {
+      border: 1px solid $c-buttonAccent;
+      padding: 15px 22px;
+      width: 200px;
+      text-align: center;
+      margin: 20px 0 20px 0;
+      cursor: pointer;
+      &:hover {
+        color: $c-white;
+        background-color: $c-buttonAccent;
       }
     }
     width: 100%;
@@ -155,13 +176,19 @@
   #{&}__description {
     padding: 30px;
     width: 100%;
+    h2 {
+      margin-bottom: 3rem;
+      color: $c-heading;
+    }
     @include respond(desktop) {
       width: 30%;
     }
   }
-  #{&}__description,
   #{&}__stage {
-    padding: 30px;
+    @include flexCenter(column, space-around, center);
+    @include respond(desktop) {
+      @include flexCenter(row, space-around, none);
+    }
   }
 }
 
