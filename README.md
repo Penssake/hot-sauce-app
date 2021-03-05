@@ -36,9 +36,6 @@ $ yarn run build
 <br>
  
 ***
- 
-## Boilerplate features
- 
 ### Styles
  
 - **Sass preprocessor** enabled
